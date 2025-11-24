@@ -21,6 +21,8 @@ class TecnicoService {
         { especialidade: { [Op.like]: `%${termo}%` } },
       ];
     }
+
+    
     
     where['$usuario.cargo$'] = 'Técnico';
 
@@ -114,5 +116,16 @@ class TecnicoService {
      }
   }
 }
+/*metodo delete
+    const tecnicoService = require('../services/tecnico.service');
+
+exports.delete = async (req, res) => {
+  try {
+    const resultado = await tecnicoService.deleteTecnico(req.params.id);
+    res.json(resultado);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};*/
 
 module.exports = new TecnicoService();
